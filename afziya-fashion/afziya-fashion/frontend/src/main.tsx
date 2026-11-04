@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')!).render(
       endpoint={import.meta.env.VITE_APPWRITE_ENDPOINT}
       projectId={import.meta.env.VITE_APPWRITE_PROJECT_ID}
     >
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <App />
       </BrowserRouter>
     </AppwriteProvider>
