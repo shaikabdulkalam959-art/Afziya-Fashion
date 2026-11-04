@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ink text-pearl font-sans antialiased; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-gold; }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold px-6 py-3 text-sm font-medium tracking-wide text-ink transition hover:bg-gold-light disabled:opacity-50;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-gold/60 px-6 py-3 text-sm font-medium tracking-wide text-gold transition hover:bg-gold/10 disabled:opacity-50;
+  }
+  .field {
+    @apply w-full border border-white/15 bg-night px-4 py-3 text-sm text-pearl placeholder:text-white/40 focus:border-gold focus:outline-none;
+  }
+}
+
+/* One orchestrated moment: the monogram draws itself on load. */
+.draw { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 1.8s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .draw { animation: none; stroke-dashoffset: 0; }
+  html { scroll-behavior: auto; }
+}

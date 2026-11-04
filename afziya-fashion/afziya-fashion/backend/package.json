@@ -1,0 +1,8 @@
+{
+  "name": "afziya-fashion-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "setup": "node scripts/setup-appwrite.mjs" },
+  "dependencies": { "node-appwrite": "^14.1.0" }
+}
